@@ -1,0 +1,9 @@
+.navbarItems a{
+    color: white;
+}
+
+.navbarFlex{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
