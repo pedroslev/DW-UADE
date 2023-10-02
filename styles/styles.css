@@ -1,9 +1,42 @@
+body {
+    background-color: grey !important;
+}
+
 .navbarItems a{
     color: white;
 }
 
 .navbarFlex{
     display: flex;
+    flex-wrap: inherit;
+    align-items: center;
     flex-direction: row;
     justify-content: flex-start;
+}
+
+.navbarList {
+    margin-left: 2em;
+}
+
+.navbarList li :hover{
+    background-color: #696868;
+}
+
+.cardS{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+    margin: 1em;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.carouselMain{
+    display: flex;
+    justify-content: center;
+    /* width: 70%; */
+}
+
+h2 {
+    margin: 0.5em;
 }
