@@ -48,8 +48,7 @@ p {
 
 .carouselMain{
     display: flex;
-    justify-content: center;
-    /* width: 70%; */
+
 }
 
 h2 {
@@ -70,4 +69,16 @@ footer p{
 .seccionNosotros{
     margin-top: 2em;
     margin-bottom: 2em;
+}
+
+.carouselProductos{
+    display: flex;
+    justify-content: center;
+    padding: 1.2em;
+}
+
+.carouselGaleria{
+    display: flex;
+    justify-content: center;
+    padding: 1.2em;
 }
