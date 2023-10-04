@@ -1,7 +1,9 @@
 body {
     background: rgb(0,0,0);
     background: linear-gradient(174deg, rgba(0,0,0,1) 0%, rgba(65,65,70,1) 50%, rgba(255,255,255,1) 100%);    
+    font-family: 'Nunito Sans', sans-serif !important;
 }
+
 
 h2 {
     color: white;
@@ -46,6 +48,12 @@ p {
     flex-wrap: wrap;
 }
 
+.card :hover{
+    box-shadow: 10px 10px 5px 0px rgba(255,255,255,0.75) !important;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(255,255,255,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(255,255,255,0.75);
+}
+
 .carouselMain{
     display: flex;
 
@@ -72,13 +80,17 @@ footer p{
 }
 
 .carouselProductos{
-    display: flex;
-    justify-content: center;
-    padding: 1.2em;
+    margin: 2em;
 }
 
 .carouselGaleria{
+    margin: 2em;
+}
+
+.map{
     display: flex;
+    align-items: center;
     justify-content: center;
-    padding: 1.2em;
+    margin-bottom: 1em;
+    margin-top: 1em
 }
