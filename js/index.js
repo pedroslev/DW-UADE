@@ -63,3 +63,5 @@ const renderKart = () => {
 //cada vez que se recibe un evento de click del boton de carro de compras se re-renderiza el carro.
 const shoppingKartButton = document.getElementById('shoppingKartButton');
 shoppingKartButton.addEventListener('click', renderKart);
+
+
