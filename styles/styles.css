@@ -4,7 +4,6 @@ body {
     font-family: 'Nunito Sans', sans-serif !important;
 }
 
-
 h2 {
     color: white;
 }
@@ -48,11 +47,7 @@ p {
     flex-wrap: wrap;
 }
 
-.card :hover{
-    box-shadow: 10px 10px 5px 0px rgba(255,255,255,0.75) !important;
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(255,255,255,0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(255,255,255,0.75);
-}
+
 
 .carouselMain{
     display: flex;
@@ -93,4 +88,20 @@ footer p{
     justify-content: center;
     margin-bottom: 1em;
     margin-top: 1em
+}
+
+.shoppingKart{
+    display: flex;
+    padding-right: 1em;
+}
+
+.addToKart{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1em;
+    padding-right: 0.5em;   
+}
+
+.kart-del-btn{
+    margin-left: 1em !important;
 }
