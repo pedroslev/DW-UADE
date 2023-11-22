@@ -3,6 +3,7 @@ const addToKart = (servicio, precio) => {
     let kart = JSON.parse(localStorage.getItem('kart')) || [];
     kart.push({ servicio, precio });
     localStorage.setItem('kart', JSON.stringify(kart));
+    //deshabilito el boton para no volver a agregar el mismo servicio al carro.
     document.getElementById(servicio).disabled = true;
 }
 
@@ -11,6 +12,7 @@ const delFromKart = (servicio) => {
     let kart = JSON.parse(localStorage.getItem('kart')) || [];
     kart = kart.filter(item => item.servicio !== servicio);
     localStorage.setItem('kart', JSON.stringify(kart));
+    //vuelvo a habilitar el boton por si el usuario quiere agregar el servicio nuevamente
     document.getElementById(servicio).disabled = false;
 }
 
@@ -20,37 +22,39 @@ const getKart = () => {
     return kart;
 }
 
-//renderizo el carro de compras en el dom
+//Renderizo el carro de compras en el dom
 const renderKart = () => {
     const kartItems = getKart();
     const kartList = document.getElementById('kartList');
-    // Clear existing items in the kart
+    // Limpio el listado de productos
     kartList.innerHTML = '';
 
+    //si el largo de mi kart es 0, no hay productos, por ende lo notifico
     if (kartItems.length === 0) {
         const li = document.createElement('li');
         li.textContent = 'No hay productos aún';
         kartList.appendChild(li);
     } else {
-        // Add new items to the kart
+        // adiciono items al carro
         kartItems.forEach(item => {
             const li = document.createElement('li');
             li.textContent = `${item.servicio} - $${item.precio}`;
 
-            // Create delete button
+            //Creo el boton de quitar elemento del carro
             const deleteButton = document.createElement('button');
             deleteButton.textContent = 'quitar';
             deleteButton.type = 'button';
             deleteButton.classList.add('btn', 'btn-danger', 'kart-del-btn'); 
 
+            //evento de click para eliminar el item del carro y re-renderizar
             deleteButton.addEventListener('click', () => {
                 delFromKart(item.servicio);
-                renderKart(); // Re-render the kart after deleting an item
+                renderKart(); // Re-render del carro tras eliminacion
             });
 
             // Append delete button to li
             li.appendChild(deleteButton);
-
+            //agregado de li item al ol
             kartList.appendChild(li);
         });
     }
