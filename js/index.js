@@ -95,6 +95,6 @@ const shoppingKartButton = document.getElementById('shoppingKartButton');
 shoppingKartButton.addEventListener('click', renderKart);
 
 
-
+//cada vez que se recibe un evento de click del boton de vaciar carro de compras se vacia el carro.
 const deleteKartButton = document.getElementById("deleteKart");
 deleteKartButton.addEventListener("click", emptyKart);
