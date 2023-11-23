@@ -11,7 +11,7 @@ const confirmarReserva = (event) => {
     const anio = document.getElementById("inputYear").value
 
     if(nombre == "" || apellido == "" || email == "" || telefono == "" || marca == "" || modelo == "" || anio == ""){
-        alert("Debe completar todos los campos")
+        alert("Por favor. Debe completar todos los campos")
     }else{
         var myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'), {})
         myModal.show()
@@ -20,3 +20,28 @@ const confirmarReserva = (event) => {
 
 const confirmarButton = document.getElementById("confirmarReserva");
 confirmarButton.addEventListener("click", confirmarReserva);
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Your code here
+    // Run your function or code here
+    let kart = JSON.parse(localStorage.getItem('kart')) || [];
+    let total = 0;
+    kart.forEach(item => {
+        total += item.precio;
+    });
+
+    const lista = document.getElementById("kartDetails");
+    kart.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = `${item.servicio} - $${item.precio}`;
+    li.classList.add('list-group-item');
+    lista.appendChild(li);
+    });
+
+    let totalItem = document.createElement('li');
+    totalItem.textContent = `Total:   $${total}`;
+    totalItem.classList.add('list-group-item');
+    lista.appendChild(totalItem);
+
+});
+

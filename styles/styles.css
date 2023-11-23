@@ -47,11 +47,8 @@ p {
     flex-wrap: wrap;
 }
 
-
-
 .carouselMain{
     display: flex;
-
 }
 
 h2 {
@@ -124,4 +121,16 @@ footer p{
 .formDetalles ul{
     margin-left: 5em;
     margin-top: 2em;
+}
+
+.kartClass li{
+    font-size: 0.9em;
+}
+
+.kartClass li button{
+    padding: 3px;
+}
+
+totalPriceKart{
+    margin-left: 1em;
 }

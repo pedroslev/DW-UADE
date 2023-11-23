@@ -7,7 +7,7 @@ const addToKart = (servicio, precio) => {
     localStorage.setItem('kart', JSON.stringify(kart));
     //deshabilito el boton para no volver a agregar el mismo servicio al carro.
     document.getElementById(servicio).disabled = true;
-}
+};
 
 //filtro el servicio recibido del json de kart y lo actualizo. Despues habilito nuevamente el boton para que se pueda volver a agregar al carrito.
 const delFromKart = (servicio) => {
@@ -16,13 +16,20 @@ const delFromKart = (servicio) => {
     localStorage.setItem('kart', JSON.stringify(kart));
     //vuelvo a habilitar el boton por si el usuario quiere agregar el servicio nuevamente
     document.getElementById(servicio).disabled = false;
-}
+    kart.forEach(item => {
+        //recalculo el total del carrito
+        let total = 0;
+        total += item.precio;
+        let totalItem = document.getElementById("totalPrice");
+        totalItem.textContent = `Tu carrito:  $${total}`;
+    })
+};
 
 //obtengo el carro de compras del localStorage y lo retorno
 const getKart = () => {
     let kart = JSON.parse(localStorage.getItem('kart')) || [];
     return kart;
-}
+};
 
 //Renderizo el carro de compras en el dom
 const renderKart = () => {
@@ -33,12 +40,15 @@ const renderKart = () => {
 
     //si el largo de mi kart es 0, no hay productos, por ende lo notifico
     if (kartItems.length === 0) {
-        document.getElementById("payButton").disabled = true
+        let totalItem = document.getElementById("totalPrice");
+        totalItem.textContent = `Tu carrito: $0`;
+        document.getElementById("payButton").disabled = true;
         const li = document.createElement('li');
         li.textContent = 'No hay productos aún';
         kartList.appendChild(li);
     } else {
-        document.getElementById("payButton").disabled = false
+        document.getElementById("payButton").disabled = false;
+        let total = 0
         // adiciono items al carro
         kartItems.forEach(item => {
             const li = document.createElement('li');
@@ -50,6 +60,7 @@ const renderKart = () => {
             deleteButton.type = 'button';
             deleteButton.classList.add('btn', 'btn-danger', 'kart-del-btn'); 
 
+            total = total + item.precio;
             //evento de click para eliminar el item del carro y re-renderizar
             deleteButton.addEventListener('click', () => {
                 delFromKart(item.servicio);
@@ -60,6 +71,8 @@ const renderKart = () => {
             li.appendChild(deleteButton);
             //agregado de li item al ol
             kartList.appendChild(li);
+            let totalItem = document.getElementById("totalPrice");
+            totalItem.textContent = `Tu carrito:  $${total}`;
         });
     }
 }
@@ -67,7 +80,7 @@ const renderKart = () => {
 //Esta funcion elimina el localStorage y re-renderiza el carrito de compras
 const emptyKart = () => {
     //traigo items del localStorage
-    items = JSON.parse(localStorage.getItem('kart'));
+    let items = JSON.parse(localStorage.getItem('kart'));
     //recorro para habilitar los botones de los anteriormente deshabilitados
     for (let i = 0; i < items.length; i++) {
         document.getElementById(items[i].servicio).disabled = false;
@@ -84,4 +97,4 @@ shoppingKartButton.addEventListener('click', renderKart);
 
 
 const deleteKartButton = document.getElementById("deleteKart");
-deleteKartButton.addEventListener("click", emptyKart)
+deleteKartButton.addEventListener("click", emptyKart);
