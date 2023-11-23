@@ -1,3 +1,5 @@
+"use strict";
+
 //cada onclick de servicios se agrega al localStorage.
 const addToKart = (servicio, precio) => {
     let kart = JSON.parse(localStorage.getItem('kart')) || [];
@@ -64,6 +66,13 @@ const renderKart = () => {
 
 //Esta funcion elimina el localStorage y re-renderiza el carrito de compras
 const emptyKart = () => {
+    //traigo items del localStorage
+    items = JSON.parse(localStorage.getItem('kart'));
+    //recorro para habilitar los botones de los anteriormente deshabilitados
+    for (let i = 0; i < items.length; i++) {
+        document.getElementById(items[i].servicio).disabled = false;
+    }
+    //borro y re renderizo localstorage
     localStorage.clear();
     renderKart();
 }
