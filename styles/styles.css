@@ -134,3 +134,8 @@ footer p{
 totalPriceKart{
     margin-left: 1em;
 }
+
+.closeButton{
+    text-decoration: none;
+    color: white;
+}

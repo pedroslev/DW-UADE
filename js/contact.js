@@ -21,10 +21,9 @@ const confirmarReserva = (event) => {
 const confirmarButton = document.getElementById("confirmarReserva");
 confirmarButton.addEventListener("click", confirmarReserva);
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Your code here
-    // Run your function or code here
+document.addEventListener("DOMContentLoaded", () => {
     let kart = JSON.parse(localStorage.getItem('kart')) || [];
+    console.log(`kart is: ${kart}`)
     let total = 0;
     kart.forEach(item => {
         total += item.precio;
