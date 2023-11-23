@@ -1,6 +1,6 @@
 body {
     background: rgb(0,0,0);
-    background: linear-gradient(174deg, rgba(0,0,0,1) 0%, rgba(65,65,70,1) 50%, rgba(255,255,255,1) 100%);    
+    background: linear-gradient(174deg, rgba(0,0,0,1) 0%, rgb(115, 115, 117) 30%, rgba(255,255,255,1) 100%);    
     font-family: 'Nunito Sans', sans-serif !important;
 }
 
@@ -109,4 +109,19 @@ footer p{
 .payButton{
     text-decoration: none;
     color: white;
+}
+
+.formDetalles{
+    display: flex;
+    margin: 5em;
+}
+
+.formDetalles form{
+    width: 70%;
+    color: white;
+}
+
+.formDetalles ul{
+    margin-left: 5em;
+    margin-top: 2em;
 }

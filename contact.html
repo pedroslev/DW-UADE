@@ -28,51 +28,104 @@
           <h1 class="text-white" style="padding-left: 0.5em;"><i class="bi bi-gem"></i>Automobili</h1>
         </div>
       </nav>
-
-    <form class="row g-3">
+    <div class="formDetalles">
+      <form class="row g-3">
+        <legend>Completa tus detalles para la reserva de servicios:</legend>
         <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Email</label>
-          <input type="email" class="form-control" id="inputEmail4">
+          <label for="inputName" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre">
         </div>
         <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Password</label>
-          <input type="password" class="form-control" id="inputPassword4">
+          <label for="inputApellido" class="form-label">Apellido</label>
+          <input type="text" class="form-control" id="apellido">
+        </div>
+        <div class="col-md-6">
+          <label for="inputEmail" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email">
+        </div>
+        <div class="col-md-6">
+          <label for="inputPhone" class="form-label">Telefono de contacto</label>
+          <input type="number" class="form-control" id="phoneNumber">
         </div>
         <div class="col-12">
-          <label for="inputAddress" class="form-label">Address</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-        </div>
-        <div class="col-12">
-          <label for="inputAddress2" class="form-label">Address 2</label>
-          <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+          <label for="inputBrand" class="form-label">Marca de auto</label>
+          <input type="text" class="form-control" id="inputBrand" placeholder="Toyota">
         </div>
         <div class="col-md-6">
-          <label for="inputCity" class="form-label">City</label>
-          <input type="text" class="form-control" id="inputCity">
-        </div>
-        <div class="col-md-4">
-          <label for="inputState" class="form-label">State</label>
-          <select id="inputState" class="form-select">
-            <option selected>Choose...</option>
-            <option>...</option>
-          </select>
+          <label for="inputModel" class="form-label">Modelo de auto</label>
+          <input type="text" class="form-control" id="inputModel" placeholder="Corolla">
         </div>
         <div class="col-md-2">
-          <label for="inputZip" class="form-label">Zip</label>
-          <input type="text" class="form-control" id="inputZip">
+          <label for="inputYear" class="form-label">Año</label>
+          <input type="text" class="form-control" id="inputYear">
         </div>
         <div class="col-12">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" id="gridCheck">
             <label class="form-check-label" for="gridCheck">
-              Check me out
+              Quiero recibir noticias mediante  email
             </label>
           </div>
         </div>
         <div class="col-12">
-          <button type="submit" class="btn btn-primary">Sign in</button>
+          <button type="submit" class="btn btn-primary">Confirmar</button>
         </div>
       </form>
+      <div>
+        <ul class="list-group" id="kartDetails">
+          <li class="list-group-item">example</li>
+          <li class="list-group-item">aca va el detalle del carrito con el total</li>
+        </ul>
+      </div>
+    </div>
+    <footer class="text-center text-lg-start bg-white text-muted">
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <div class="me-5 d-none d-lg-block">
+          <span>Contactate con nosotros en nuestras redes:</span>
+        </div>
+        <div>
+          <a href="https://www.facebook.com/" target="_blank" class="me-4 link-secondary">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="https://www.x.com/" target="_blank" class="me-4 link-secondary">
+            <i class="bi bi-twitter-x"></i>
+          </a>
+          <a href="https://www.google.com/" target="_blank" class="me-4 link-secondary">
+            <i class="bi bi-google"></i>
+          </a>
+          <a href="https://www.instagram.com" target="_blank" class="me-4 link-secondary">
+            <i class="bi bi-instagram"></i>
+          </a>
+          <a href="https://www.youtube.com/" target="_blank" class="me-4 link-secondary">
+            <i class="bi bi-youtube"></i>
+          </a>
+        </div>
+      </section>
+  
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <div class="row mt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                <i class="bi bi-gem"></i>Automobili
+              </h6>
+            </div>
+  
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+              <p><i class="bi bi-geo-alt"></i> Av. Francisco Beiró 2151</p>
+              <p><i class="bi bi-envelope"></i> info@example.com</p>
+              <p><i class="bi bi-telephone"></i> + 54 91161238745</p>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+        © 2023 Copyright:
+        <a class="text-reset fw-bold" href="https://www.automobili.com/"> www.automobili.com</a>
+      </div>
+    </footer>
 </body>
 
 <!-- ownedJS -->
