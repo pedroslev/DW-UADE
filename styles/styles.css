@@ -105,3 +105,8 @@ footer p{
 .kart-del-btn{
     margin-left: 1em !important;
 }
+
+.payButton{
+    text-decoration: none;
+    color: white;
+}

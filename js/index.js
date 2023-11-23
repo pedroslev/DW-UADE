@@ -31,10 +31,12 @@ const renderKart = () => {
 
     //si el largo de mi kart es 0, no hay productos, por ende lo notifico
     if (kartItems.length === 0) {
+        document.getElementById("payButton").disabled = true
         const li = document.createElement('li');
         li.textContent = 'No hay productos aún';
         kartList.appendChild(li);
     } else {
+        document.getElementById("payButton").disabled = false
         // adiciono items al carro
         kartItems.forEach(item => {
             const li = document.createElement('li');
@@ -60,8 +62,17 @@ const renderKart = () => {
     }
 }
 
+//Esta funcion elimina el localStorage y re-renderiza el carrito de compras
+const emptyKart = () => {
+    localStorage.clear();
+    renderKart();
+}
+
 //cada vez que se recibe un evento de click del boton de carro de compras se re-renderiza el carro.
 const shoppingKartButton = document.getElementById('shoppingKartButton');
 shoppingKartButton.addEventListener('click', renderKart);
 
 
+
+const deleteKartButton = document.getElementById("deleteKart");
+deleteKartButton.addEventListener("click", emptyKart)
